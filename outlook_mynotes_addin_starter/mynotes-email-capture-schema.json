@@ -1,0 +1,35 @@
+{
+  "type": "mynotes-email-capture",
+  "version": 1,
+  "capturedAt": "2026-03-27T16:30:00+10:00",
+  "source": {
+    "platform": "outlook",
+    "messageId": "",
+    "conversationId": "",
+    "folder": ""
+  },
+  "email": {
+    "subject": "Divider safety relay fault",
+    "from": "maintenance@example.com",
+    "to": [
+      "team@example.com"
+    ],
+    "date": "2026-03-27T14:12:00+10:00",
+    "bodyPreview": "Divider tripped on safety relay and caused downtime requiring review.",
+    "attachments": [
+      {
+        "name": "fault-photo.jpg"
+      }
+    ]
+  },
+  "action": {
+    "target": "task",
+    "title": "Investigate divider safety relay fault",
+    "summary": "Downtime event requiring review",
+    "priority": "high",
+    "tags": [
+      "maintenance",
+      "downtime"
+    ]
+  }
+}

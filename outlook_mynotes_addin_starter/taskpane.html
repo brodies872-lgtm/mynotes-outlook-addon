@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>MyNotes Bridge</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+  <style>
+    :root{
+      --bg:#0f1220; --panel:#171b2e; --panel2:#202642; --border:#3a4066;
+      --text:#eef2ff; --muted:#aab3d6; --accent:#8b7cff; --ok:#78dba9;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font:14px/1.45 system-ui,Segoe UI,Arial;background:var(--bg);color:var(--text)}
+    .wrap{padding:16px;display:flex;flex-direction:column;gap:14px}
+    .card{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--border);border-radius:18px;padding:14px;box-shadow:0 16px 32px rgba(0,0,0,.28)}
+    h1{font-size:18px;margin:0}
+    .sub{color:var(--muted);font-size:12px}
+    .meta{display:grid;grid-template-columns:1fr;gap:8px}
+    .label{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+    .value{word-break:break-word}
+    textarea, select, input{width:100%;background:#12172a;color:var(--text);border:1px solid var(--border);border-radius:12px;padding:10px 12px;font:inherit}
+    textarea{min-height:120px;resize:vertical}
+    .row{display:flex;gap:8px;flex-wrap:wrap}
+    button{border:1px solid var(--border);background:var(--panel2);color:var(--text);border-radius:12px;padding:10px 14px;font-weight:700;cursor:pointer}
+    button:hover{transform:translateY(-1px);box-shadow:0 0 0 1px color-mix(in srgb, var(--accent) 30%, transparent),0 8px 20px color-mix(in srgb, var(--accent) 28%, transparent),0 0 10px color-mix(in srgb, var(--accent) 40%, transparent)}
+    .primary{background:linear-gradient(180deg,color-mix(in srgb,var(--accent) 35%, var(--panel2)), var(--panel2))}
+    .status{font-size:12px;color:var(--muted)}
+    .hidden{display:none}
+    .hint{font-size:12px;color:var(--muted)}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <h1>MyNotes Bridge</h1>
+      <div class="sub">Read the current Outlook email, build MyNotes JSON, and copy it for local intake.</div>
+    </div>
+
+    <div class="card">
+      <div class="meta">
+        <div><div class="label">Subject</div><div class="value" id="subjectValue">Loading…</div></div>
+        <div><div class="label">From</div><div class="value" id="fromValue">Loading…</div></div>
+        <div><div class="label">Date</div><div class="value" id="dateValue">Loading…</div></div>
+        <div><div class="label">Attachments</div><div class="value" id="attachmentsValue">Loading…</div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="row">
+        <div style="flex:1 1 180px">
+          <div class="label">Suggested target</div>
+          <select id="targetInput">
+            <option value="task">Task</option>
+            <option value="note">Notebook</option>
+          </select>
+        </div>
+        <div style="flex:1 1 140px">
+          <div class="label">Priority</div>
+          <select id="priorityInput">
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+            <option value="low">Low</option>
+          </select>
+        </div>
+      </div>
+      <div style="margin-top:10px">
+        <div class="label">Extra tags</div>
+        <input id="tagsInput" type="text" placeholder="maintenance, downtime" />
+      </div>
+      <div style="margin-top:10px">
+        <div class="label">Summary override</div>
+        <textarea id="summaryInput" placeholder="Optional summary override"></textarea>
+      </div>
+      <div class="hint" style="margin-top:8px">The MyNotes app can still auto-route after import, so you can keep this minimal.</div>
+    </div>
+
+    <div class="card">
+      <div class="row">
+        <button class="primary" id="copyJsonBtn">Copy MyNotes JSON</button>
+        <button id="refreshBtn">Refresh email</button>
+      </div>
+      <div class="status" id="statusLine">Ready.</div>
+    </div>
+
+    <div class="card">
+      <div class="label">Generated payload preview</div>
+      <textarea id="payloadPreview" readonly></textarea>
+    </div>
+  </div>
+
+  <script src="./taskpane.js"></script>
+</body>
+</html>
