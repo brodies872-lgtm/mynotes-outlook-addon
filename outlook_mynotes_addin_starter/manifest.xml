@@ -10,11 +10,11 @@
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="MyNotes Bridge"/>
   <Description DefaultValue="Copy an Outlook email into MyNotes-compatible JSON for local intake."/>
-  <IconUrl DefaultValue="https://localhost:3000/assets/icon-64.png"/>
-  <HighResolutionIconUrl DefaultValue="https://localhost:3000/assets/icon-128.png"/>
-  <SupportUrl DefaultValue="https://localhost:3000/support.html"/>
+  <IconUrl DefaultValue="https://brodies872-lgtm.github.io/mynotes-outlook-addon/outlook_mynotes_addin_starter/assets/icon-64.png"/>
+  <HighResolutionIconUrl DefaultValue="https://brodies872-lgtm.github.io/mynotes-outlook-addon/outlook_mynotes_addin_starter/assets/icon-128.png"/>
+  <SupportUrl DefaultValue="https://brodies872-lgtm.github.io/mynotes-outlook-addon/outlook_mynotes_addin_starter/support.html"/>
   <AppDomains>
-    <AppDomain>https://localhost:3000</AppDomain>
+    <AppDomain>https://brodies872-lgtm.github.io</AppDomain>
   </AppDomains>
 
   <Hosts>
@@ -30,7 +30,7 @@
   <FormSettings>
     <Form xsi:type="ItemRead">
       <DesktopSettings>
-        <SourceLocation DefaultValue="https://localhost:3000/taskpane.html"/>
+        <SourceLocation DefaultValue="https://brodies872-lgtm.github.io/mynotes-outlook-addon/outlook_mynotes_addin_starter/taskpane.html"/>
         <RequestedHeight>450</RequestedHeight>
       </DesktopSettings>
     </Form>
@@ -82,13 +82,13 @@
     </Hosts>
     <Resources>
       <bt:Images>
-        <bt:Image id="Icon.16" DefaultValue="https://localhost:3000/assets/icon-16.png"/>
-        <bt:Image id="Icon.32" DefaultValue="https://localhost:3000/assets/icon-32.png"/>
-        <bt:Image id="Icon.80" DefaultValue="https://localhost:3000/assets/icon-80.png"/>
+        <bt:Image id="Icon.16" DefaultValue="https://brodies872-lgtm.github.io/mynotes-outlook-addon/outlook_mynotes_addin_starter/assets/icon-16.png"/>
+        <bt:Image id="Icon.32" DefaultValue="https://brodies872-lgtm.github.io/mynotes-outlook-addon/outlook_mynotes_addin_starter/assets/icon-32.png"/>
+        <bt:Image id="Icon.80" DefaultValue="https://brodies872-lgtm.github.io/mynotes-outlook-addon/outlook_mynotes_addin_starter/assets/icon-80.png"/>
       </bt:Images>
       <bt:Urls>
-        <bt:Url id="Commands.Url" DefaultValue="https://localhost:3000/commands.html"/>
-        <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/taskpane.html"/>
+        <bt:Url id="Commands.Url" DefaultValue="https://brodies872-lgtm.github.io/mynotes-outlook-addon/outlook_mynotes_addin_starter/commands.html"/>
+        <bt:Url id="Taskpane.Url" DefaultValue="https://brodies872-lgtm.github.io/mynotes-outlook-addon/outlook_mynotes_addin_starter/taskpane.html"/>
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="MyNotes.GroupLabel" DefaultValue="MyNotes"/>
